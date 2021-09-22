@@ -133,10 +133,9 @@ export default function App() {
         <Divider />
         <List>
           {['Login'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
+            <ListItem button key={text} component={Link} to="/login">
+              <ListItemIcon component={Link}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                <Link to="/login">Login</Link>
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -145,10 +144,9 @@ export default function App() {
         <Divider />
         <List>
           {['SignUp'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} component={Link} to="/signup">
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                <Link to="/signup">Signup</Link>
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -167,7 +165,7 @@ export default function App() {
           <Route path={"/signup"}>Signup Page
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader/>
-            <SignUp></SignUp>
+            <SignUp/>
           </Box>
           </Route>
         </Switch>
